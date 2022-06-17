@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DATA</title>
+	<link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+	<div class="container">
+		<label for="SNO">S.NO</label>
+		<input type="text" name="SNO" id="SNO">
+		<label for="Name">NAME</label>
+		<input type="text" name="Name" id="Name">
+		<label for="email">EMAIL</label>
+		<input type="text" name="email" id="email">
+		<input type="button" name="button" id="btn" value="Submit" onclick="AddRow()">
+		
+	</div>
+
+		<table id="show">
+			
+				<tr>
+					<th>S.NO</th>
+					<th>Name</th>
+					<th>Email</th>
+				</tr>
+			
+		</table>
+	
+	
+	<script>
+		
+		var list1 = [];
+		var list2 = [];
+		var list3 = [];
+		
+
+		var n = 1;
+		var x = 0;
+
+		function AddRow(){
+
+			var AddRown = document.getElementById('show');
+			var NewRow = AddRown.insertRow(n);
+
+			list1[x] = document.getElementById("SNO").value;
+			list2[x] = document.getElementById("Name").value;
+			list3[x] = document.getElementById("email").value;
+		
+
+			var cel1 = NewRow.insertCell(0);
+			var cel2 = NewRow.insertCell(1);
+			var cel3 = NewRow.insertCell(2);
+			
+
+			cel1.innerHTML = list1[x];
+			cel2.innerHTML = list2[x];
+			cel3.innerHTML = list3[x];
+			
+
+			n++;
+			x++;
+		}
+
+	</script>
+</body>
+</html>
